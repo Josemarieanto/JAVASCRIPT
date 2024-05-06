@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. Odd or Even:
+        let a = 10;
+        if(a % 2 == 0){
+            output = `${a} is even number.`
+        }else{
+            output = `${a} is odd number.`
+        }
+        console.log(output)
+
+        // 2. maximum or minimum:
+        let num1 = 10; num2 = 20;
+        if(num1>num2){
+            console.log("num1 is maximum")
+        }else if(num1<num2){
+            console.log("num2 is maximum")
+        }else{
+            console.log("num1 and num2 are equal.");
+        }
+
+        // 3. positive or negative:
+        let b = 35;
+        if(b > 0){
+            result = `${b} is positive.`
+        }else if(b == 0){
+            result = `The number is zero .`
+        }else{
+            result = `${b} is negative.`
+        }
+        console.log(result)
+
+        // 4.divisible by 5 and 11:
+        let c = 55;
+        if((c % 5 == 0) && (c % 11 == 0)){
+            conclusion = `${c} is divisible by both 5 and 11.`
+        }else{
+            conclusion = `${c} is not divisiible by 5 and 11.`
+        }
+        console.log(conclusion)
+
+        // 5. week number and week day:
+
+        let week = 5;
+        if(week == 1){
+            console.log("Monday");
+        }else if(week == 2){
+            console.log("Tuesday");
+        }else if(week == 3){
+            console.log("Wednesday");
+        }else if(week == 4){
+            console.log("Thursday");
+        }else if(week == 5){
+            console.log("Friday");
+        }else if(week == 6){
+            console.log("Saturday")
+        }else if (week == 7){
+            console.log("Sunday");
+        }else{
+            console.log("Invalid")
+        }
+        
+        
+    </script>
+    
+</body>
+</html>
