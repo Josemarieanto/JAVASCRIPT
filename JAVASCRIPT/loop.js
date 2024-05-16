@@ -144,6 +144,69 @@
 //         document.write(`${k++}\n`);
 //     }    
 //     document.write("<br>");
+
+//  problem : 16
+
+
+// v1 = parseInt(prompt("Enter the number: "))
+// v1 = parseInt(prompt("Enter the number: "))
+// v1 = parseInt(prompt("Enter the number: "))
+// v1 = parseInt(prompt("Enter the number: "))
+// v1 = parseInt(prompt("Enter the number: "))
+// v1 = parseInt(prompt("Enter the number: "))
+// v1 = parseInt(prompt("Enter the number: "))
+// v1 = parseInt(prompt("Enter the number: "))
+// v1 = parseInt(prompt("Enter the number: "))
+// v1 = parseInt(prompt("Enter the number: "))
+
+// document.write(`The Even numbers are:`)
+// let i , sum = 0;
+// for(i = 1; i <= 10; i ++){
+//     document.write(`${2 * i} \n`);
+//     sum += 2 * i;
+// }
+// document.write(`<br>The sum of Even numbers is: ${sum}`)
+
+
+// problem : 22
+// let p,q;
+
+// for(let i = 0; i < 5; i++){
+//     if(i % 2 == 0){
+//         p = 1;
+//         q = 0;
+//     }else{
+//         p = 0;
+//         q = 1;
+//     }
+//     for (let j = 0; j <= i; j++){
+//         if(j % 2 == 0){
+//             document.write(p)
+//         }else{
+//             document.write(q)
+//         }
+//     }
+//     document.write(`<br>`)
+// }
+
+// problem: 25
+
+// n = parseInt(prompt("Enter the number: "))
+// n = parseInt(prompt("Enter the number: "))
+// n = parseInt(prompt("Enter the number: "))
+// n = parseInt(prompt("Enter the number: "))
+// n = parseInt(prompt("Enter the number: "))
+// let i, square, sum = 0;
+// for(i = 1; i <= n; i++){
+//     square = i ** 2;
+//     sum += i ** 2
+//     document.write(`the square of ${i} ${square} <br>`)
+// }
+// document.write(`the sum of squares =  ${sum} <br>`)
+
+
+// problem : 27
+
 // }
 
 
