@@ -1,4 +1,5 @@
 // let n = parseInt(prompt("Enter the number"));
+//document.write(`${n}<br>`);
 // let a = 0;
 // let b = 0;
 // let c = 0;
@@ -9,6 +10,11 @@
 // let h = 0;
 // let j = 0;
 // let k = 0;
+
+let arr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+let [a, b, c, d, e, f, g, h, j, k] = arr;
+
 
 // let s = n.toString().split("");
 
