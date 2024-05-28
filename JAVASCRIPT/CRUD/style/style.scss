@@ -51,6 +51,19 @@ body {
             padding: 10px;
         }
     }
+
+  .btns {
+      .edit-btn,
+      .delete-btn {
+        display: block;
+        padding-block: 5px;
+        width: 100%;
+        gap: 10px;
+        border-radius: 50px;
+        align-items: center;
+        margin-block: 10px;
+      }
+    }
 }
 
 @media (max-width: 1000px) {
