@@ -9,7 +9,35 @@ const closeBtn = doc.querySelector(".close-btn");
 const submitBtn = doc.querySelector(".submit-btn");
 const foodCardLists = doc.querySelector(".food-recipe");
 
-function CardItem(data) {
+let editIndex = -1; // Variable to track the index of the card being edited
+
+function deleteCard(index) {
+  const cardList = JSON.parse(localStorage.getItem("array"));
+  const filteredCardList = cardList.filter((_, i) => i !== index);
+  localStorage.setItem("array", JSON.stringify(filteredCardList));
+  render(foodCardLists);
+}
+
+window.deleteCard = deleteCard;
+
+function editCard(index) {
+  const cardList = JSON.parse(localStorage.getItem("array"));
+  const card = cardList[index];
+
+  // Populate the form with card data
+  type.value = card.type;
+  title.value = card.title;
+  imageLink.value = card.image;
+  description.value = card.description;
+  price.value = card.price;
+  rating.value = card.rating;
+
+  editIndex = index; // Set the index of the card being edited
+}
+
+window.editCard = editCard;
+
+function CardItem(data, index) {
   const { type, title, description, image, price, rating } = data;
   return `<section class="card-item">
               <img class="image" src="${image}" width="100%" alt="img">
@@ -22,35 +50,54 @@ function CardItem(data) {
                     <p class="rating">Rating - ${rating}</p>
                 </article>
               </article>
+              <section class='btns'>
+                <button type="button" class="edit-btn" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                data-bs-whatever="@mdo" onclick='editCard(${index})'>Edit</button>
+                <button class="delete-btn" onclick='deleteCard(${index})'>Delete</button>
+              </section>
           </section>`;
-        }
+}
 
-submitBtn.addEventListener("click", function () {
+function submit() {
   const data = {
+    id: Date.now(),
     type: type.value,
     title: title.value,
-    image: imageLink.value,
     description: description.value,
+    image: imageLink.value,
     price: price.value,
-    rating: rating.value,
+    rating: rating.value
   };
 
-  if (JSON.parse(localStorage.getItem("array"))) {
-    localStorage.setItem(
-      "array",
-      JSON.stringify([...JSON.parse(localStorage.getItem("array")), data])
-    );
+  const cardArray = JSON.parse(localStorage.getItem("array")) || [];
+
+  if (editIndex > -1) {
+    // Update existing card
+    cardArray[editIndex] = data;
+    editIndex = -1; // Reset the edit index
   } else {
-    localStorage.setItem("array", JSON.stringify([data]));
+    // Add new card
+    cardArray.push(data);
   }
 
-  render(foodCardLists);
-});
+  localStorage.setItem("array", JSON.stringify(cardArray));
 
-function render(array) {
-  array.innerHTML = JSON.parse(localStorage.getItem("array"))
-    .map(CardItem)
-    .join("");
+  // Clear form inputs
+  type.value = '';
+  title.value = '';
+  description.value = '';
+  imageLink.value = '';
+  price.value = '';
+  rating.value = '';
+
+  render(foodCardLists);
+}
+
+submitBtn.addEventListener("click", submit);
+
+function render(container) {
+  const array = JSON.parse(localStorage.getItem("array")) || [];
+  container.innerHTML = array.map((item, index) => CardItem(item, index)).join("");
 }
 
 render(foodCardLists);
