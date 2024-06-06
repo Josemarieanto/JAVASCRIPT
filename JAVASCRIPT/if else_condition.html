@@ -290,6 +290,26 @@
         // console.log("Gross salary of an employee: " + gs);
 
 
+    function valueEqualToIndex(l) {
+    let newList = [];
+    let s = l.length
+    for (let i = 0; i < s; i++) {
+        let index = i + 1;
+        let element = l[i];
+        if (element == index) {
+            newList.push(element);
+        }
+    }
+    return newList; 
+}
+
+let l = [0, 2, 31, 4, 6];
+
+document.write(valueEqualToIndex(l));
+
+
+
+
 
 
 </script>
